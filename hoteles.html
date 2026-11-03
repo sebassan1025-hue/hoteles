@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor & Tradición - Restaurante</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #8b0000;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        header h1 {
+            margin-bottom: 0.5rem;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0.8rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ffa500;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #8b0000;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #8b0000;
+            padding-bottom: 0.5rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        input, select, textarea {
+            padding: 0.6rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #8b0000;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #a52a2a;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Restaurante Sabor & Tradición</h1>
+        <p>Los mejores platillos de la región en tu mesa</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#menu">Menú</a>
+        <a href="#reservas">Reservar Mesa</a>
+        <a href="#pedidos">Pedido a Domicilio</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Sección de Inicio -->
+        <section id="inicio" class="section">
+            <h2>Bienvenido</h2>
+            <p>Disfruta de una experiencia gastronómica única con ingredientes frescos y recetas tradicionales. Puedes reservar una mesa con anticipación o pedir tu comida favorita para llevar a casa.</p>
+        </section>
+
+        <!-- Sección de Menú (Resumen) -->
+        <section id="menu" class="section">
+            <h2>Nuestra Carta</h2>
+            <ul>
+                <li><strong>Entrada:</strong> Ensalada de la casa - $85 MXN</li>
+                <li><strong>Plato Fuerte:</strong> Filete Mignon con papas al horno - $240 MXN</li>
+                <li><strong>Plato Fuerte:</strong> Pasta Carbonara artesanal - $180 MXN</li>
+                <li><strong>Postre:</strong> Pastel de chocolate volcánico - $95 MXN</li>
+            </ul>
+        </section>
+
+        <!-- Formulario 1: Reserva de Mesa -->
+        <section id="reservas" class="section">
+            <h2>Reserva una Mesa</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="nombre-reserva">Nombre completo:</label>
+                    <input type="text" id="nombre-reserva" name="nombre_reserva" required placeholder="Ej. Juan Pérez">
+                </div>
+
+                <div class="form-group">
+                    <label for="email-reserva">Correo electrónico:</label>
+                    <input type="email" id="email-reserva" name="email_reserva" required placeholder="correo@ejemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono-reserva">Teléfono:</label>
+                    <input type="tel" id="telefono-reserva" name="telefono_reserva" required placeholder="55 1234 5678">
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha-reserva">Fecha de la reserva:</label>
+                    <input type="date" id="fecha-reserva" name="fecha_reserva" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="hora-reserva">Hora:</label>
+                    <input type="time" id="hora-reserva" name="hora_reserva" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="personas">Número de personas:</label>
+                    <select id="personas" name="personas" required>
+                        <option value="1">1 Persona</option>
+                        <option value="2">2 Personas</option>
+                        <option value="3">3 Personas</option>
+                        <option value="4">4 Personas</option>
+                        <option value="5+">5 o más Personas</option>
+                    </select>
+                </div>
+
+                <button type="submit">Confirmar Reserva</button>
+            </form>
+        </section>
+
+        <!-- Formulario 2: Pedido a Domicilio -->
+        <section id="pedidos" class="section">
+            <h2>Pedido a Domicilio</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="nombre-pedido">Nombre completo:</label>
+                    <input type="text" id="nombre-pedido" name="nombre_pedido" required placeholder="Ej. María López">
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Dirección de entrega:</label>
+                    <input type="text" id="direccion" name="direccion" required placeholder="Calle, número, colonia, ciudad">
+                </div>
+
+                <div class="form-group">
+                    <label for="platillo">Selecciona tu platillo:</label>
+                    <select id="platillo" name="platillo" required>
+                        <option value="ensalada">Ensalada de la casa</option>
+                        <option value="filete">Filete Mignon</option>
+                        <option value="pasta">Pasta Carbonara</option>
+                        <option value="pastel">Pastel de chocolate</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="notas">Instrucciones especiales:</label>
+                    <textarea id="notas" name="notas" rows="3" placeholder="Ej. Sin cebolla, salsa aparte..."></textarea>
+                </div>
+
+                <button type="submit">Enviar Pedido</button>
+            </form>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="section">
+            <h2>Contacto</h2>
+            <p><strong>Dirección:</strong> Av. Principal #123, Centro</p>
+            <p><strong>Horarios:</strong> Martes a Domingo de 13:00 a 23:00 hrs</p>
+            <p><strong>Teléfono:</strong> (55) 5555-1234</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Restaurante Sabor & Tradición. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
